@@ -2,6 +2,8 @@
 
 Moralis is a service that helps to build serverless web3 dApps.
 
+Video: [https://youtu.be/T1Eh8D5LjFE](https://youtu.be/T1Eh8D5LjFE)
+
 How to start:
 
 1. Got to [Moralis.io](https://moralis.io/) and create a free account.
