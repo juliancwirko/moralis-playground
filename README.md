@@ -2,7 +2,7 @@
 
 How to start:
 
-1. Got to [Moralis.io](https://www.moralis.io) and create a free account.
+1. Got to [Moralis.io](https://moralis.io/) and create a free account.
 2. Create your server. You'll find all the docs here [https://docs.moralis.io/](https://docs.moralis.io/)
 3. Clone this repo
 4. Fill up your API id and your server URL in the `main.js` file
