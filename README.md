@@ -1,6 +1,6 @@
 ### Moralis playground
 
-Moralis is a service which helps building serverless web3 dApps.
+Moralis is a service that helps to build serverless web3 dApps.
 
 How to start:
 
