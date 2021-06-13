@@ -1,0 +1,14 @@
+{
+  "name": "moralis-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serve-handler": "^6.1.3"
+  }
+}

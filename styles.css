@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 30px;
+  border: 0;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button-small {
+  padding: 3px 5px;
+  font-size: 13px;
+  font-weight: normal;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.transactions {
+  font-size: 14px;
+}
+
+.transactions > div {
+  padding: 5px;
+}
+
+.footer {
+  padding: 30px 0;
+}
+
+.notes {
+  margin-top: 30px;
+}
+
+.add-note-section {
+  margin-top: 30px;
+}
+
+.note-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.note-text {
+  margin-right: 30px;
+}
+
+.add-note-textarea {
+  width: 600px;
+  height: 80px;
+  border-radius: 4px;
+  border: 1px solid #cdcdcd;
+  padding: 10px;
+}
+
+.logged-in-section {
+  margin-bottom: 80px;
+}
+
+.file-ipfs-section {
+  margin-top: 30px;
+}
+
+.images-wrapper {
+  display: flex;
+  margin-top: 30px;
+}
+
+.images-wrapper img {
+  margin: 10px;
+  max-width: 200px;
+}
+
+.hr-line {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.js-disabled {
+  display: none;
+}

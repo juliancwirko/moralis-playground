@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moralis playground</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <!-- Moralis SDK code -->
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>Moralis playground (<a href="https://www.moralis.io">moralis.io</a>)</h1>
+    <p id="help-info">If you want to login you will need Metamask browser extension and Ethereum (goerli) testnet wallet address</p>
+    <p id="user-address"></p>
+
+    <button id="login" type="button" class="button">Login</button>
+    <button id="logout" type="button" class="button">Logout</button>
+
+    <div id="for-logged-in-user" class="logged-in-section">
+      <p><strong>Your Ethereum transactions:</strong></p>
+      <div id="transactions-list" class="transactions"></div>
+      
+      <hr class="hr-line" />
+
+      <p class="add-note-section"><strong>Add note using Moralis storage:</strong></p>
+      <textarea id="add-new-note-textarea" class="add-note-textarea"></textarea>
+      <div><button id="add-new-note-button" type="button" class="button">Add note</button></div>
+      <div id="notes-container" class="notes"></div>
+
+      <hr class="hr-line" />
+      
+      <p class="file-ipfs-section"><strong>Add file with Moralis IPFS integration (according docs it is automatically pinned!!!):</strong></p>
+      <input type="file" id="file-input" />
+      <div id="images-wrapper" class="images-wrapper"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
