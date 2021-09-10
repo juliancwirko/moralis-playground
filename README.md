@@ -11,7 +11,7 @@ How to start:
 1. Got to [Moralis.io](https://moralis.io/) to create a free account.
 2. Create your server. You'll find all the docs here [https://docs.moralis.io/](https://docs.moralis.io/)
 3. Clone this repo
-4. Fill up your API id, your server URL, and collection names for files and notes. All at the beginning of the `main.js` file
+4. Fill up your APP Id, your server URL, and collection names for files and notes. All at the beginning of the `main.js` file
 5. Run `npm install`
 6. Run `npm start`
 7. Go to the `localhost:3000` in your browser
