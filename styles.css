@@ -83,6 +83,7 @@ body {
 .images-wrapper {
   display: flex;
   margin-top: 30px;
+  flex-wrap: wrap;
 }
 
 .images-wrapper img {

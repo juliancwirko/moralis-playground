@@ -2,8 +2,11 @@
 
 (function () {
   // Moralis keys - replace them with yours, only my user can add to the collection with this setup
-  const MORALIS_APP_ID = '{YOUR APP ID HERE}';
-  const MORALIS_SERVER = '{YOUR SERVER URL HERE}';
+  const MORALIS_APP_ID = 't8ro2ujjMB7W3uYIO3eLa82qytTsR1dckLOZSmYn';
+  const MORALIS_SERVER = 'https://gz80jxgvlfey.moralis.io:2053/server';
+  // Adjust collection names according to your Moralis database configuration
+  const NOTES_COLLECTION_NAME = 'JULNotes';
+  const FILES_COLLECTION_NAME = 'JULFiles';
   const CHAIN_ID = 'goerli'; // Ethereum testnet chain
 
   const loginButton = document.getElementById('login');
@@ -32,10 +35,10 @@
       logoutButton.classList.remove('js-disabled');
       loggedInSection.classList.remove('js-disabled');
       // List all transactions on this address
-      Moralis.Web3.getTransactions({ chain: CHAIN_ID, address: user.get('ethAddress') })
+      Moralis.Web3API.account.getTransactions({ chain: CHAIN_ID, address: user.get('ethAddress') })
         .then(function (transactions) {
           transactionsContainer.innerHTML = '';
-          transactions.forEach(function (transaction) {
+          transactions.result.forEach(function (transaction) {
             const transactionWrapper = document.createElement('div');
             transactionWrapper.innerHTML = transaction.hash + ' | value: ' + web3.utils.fromWei(transaction.value, 'ether') + ' Eth';
             transactionsContainer.appendChild(transactionWrapper);
@@ -56,7 +59,7 @@
   // List all notes from Moralis cloud collection
   const handleNotes = function () {
     // Create Moralis example storage object
-    const JULNotes = Moralis.Object.extend("JULNotes");
+    const JULNotes = Moralis.Object.extend(NOTES_COLLECTION_NAME);
     const julNotesQuery = new Moralis.Query(JULNotes);
     const julNotes = new JULNotes();
   
@@ -119,7 +122,7 @@
       const data = event.target.files[0];
       const file = new Moralis.File(data.name, data);
       file.saveIPFS().then(function (file) {
-        const JULFiles = Moralis.Object.extend("JULFiles");
+        const JULFiles = Moralis.Object.extend(FILES_COLLECTION_NAME);
         const julFiles = new JULFiles();
         julFiles.save({ file: file }).then(function () {
           const imageElem = document.createElement('img');
@@ -131,7 +134,7 @@
       });
     });
 
-    const julFilesQuery = new Moralis.Query('JULFiles');
+    const julFilesQuery = new Moralis.Query(FILES_COLLECTION_NAME);
     julFilesQuery.find().then(function (files) {
       imagesWrapper.innerHTML = '';
       files.forEach(function (file) {
@@ -160,7 +163,7 @@
 
   // Login user using crypto auth (Metamask)
   loginButton.addEventListener('click', function () {
-    Moralis.Web3.authenticate()
+    Moralis.authenticate()
       .then(function (user) {
         switchLoginStateInUI(user);
         handleNotes();
